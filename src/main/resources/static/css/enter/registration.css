@@ -1,0 +1,70 @@
+main {
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+main .container {
+    margin: 54px auto 0;
+}
+
+main .container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#registration input {
+    font-size: 18px;
+    width: 100%;
+    padding: 20px 0 12px 8px;
+    height: 56px;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, .4);
+    background: #fff;
+    min-width: 280px;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    color: #000;
+}
+
+#registration input:focus {
+    border-bottom:  solid 1px var(--bar);
+    outline: 0;
+    box-shadow:  0 2px 6px -8px rgba(var(--text), .45);
+}
+
+#registration input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+#registration button {
+    min-width: 280px;
+    border-radius: 28px;
+    padding: 16px 40px;
+    margin-top: 48px;
+    background-color: var(--bar);
+    color: #fff;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 6px -3px rgba(0, 0, 0, 0.63);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#registration button:hover {
+    transform:  translateY(-3px);
+    box-shadow:  0 2px 6px -1px rgba(var(--text), .65);
+}
+
+#registration button:active {
+    transform:  scale(.99);
+}

@@ -1,0 +1,30 @@
+:root{
+    --background-color: #dee8f5;
+    --header-color: #206ece;
+    --bar: #0073ff;
+    --text: #0d2b4f;
+    --lighter-text:#20589c;
+    --links: #b8d5ff;
+    --hover-links:#5ba5ff;
+}
+body, h1, h3, p, section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text);
+    min-width: 780px;
+}
+
+a {
+    color: var(--text);
+}
+a:hover {
+    color: var(--text);
+}
+
+.container {
+    min-width: 780px;
+}

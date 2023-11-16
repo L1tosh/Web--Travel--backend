@@ -1,0 +1,117 @@
+#header {
+    min-width: 780px;
+}
+.navbar {
+    width: 100%;
+    height: 80px;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, .25);*/
+    font-family: 'Barkentina Test', sans-serif;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-wrap {
+    text-align: center;
+    position: relative;
+}
+
+.navbar-wrap a {
+    font-weight: 800;
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.navbar-wrap span {
+    font-weight: 600;
+    font-size: 14px;
+    transition: all .1s ease-in-out;
+    position: absolute;
+    top: 55px;
+    white-space: nowrap;
+    left: 24px;
+}
+
+
+/* icon */
+.navbar-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right:0;
+    top: 25px;
+}
+
+.navbar-login a {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 6px;
+    padding: 4px;
+    opacity: .6;
+    transition: all .1s ease-in-out;
+}
+
+.navbar-login .nav-btn-login img {
+    width: 50px;
+}
+
+.navbar-login .nav-btn-registration {
+    color: #fff;
+    background-color: #0059d9;
+    border: 1px solid #0059d9;
+    border-radius: 5px;
+    opacity: .95;
+    transition: all .1s ease-in-out;
+}
+
+.navbar-login .nav-btn-login:hover {
+    background-color: white;
+    opacity: 1;
+}
+
+.navbar-login .nav-btn-registration:hover {
+    background-color: white;
+    border: 1px solid #0059d9;
+    color: #0059d9;
+    opacity: 1;
+}
+
+
+/* categories */
+.categories {
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    padding-bottom: 5px;
+    margin: 0 auto;
+}
+
+
+.navbar-menu li a {
+    margin-right: 28px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    padding-left: 18px;
+    opacity: .8;
+    transition: all .1s ease-in-out;
+}
+
+.navbar-menu li a:hover {
+    opacity: 1;
+}
+
+/* popup block */

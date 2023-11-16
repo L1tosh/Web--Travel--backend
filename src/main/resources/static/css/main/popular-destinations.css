@@ -1,0 +1,71 @@
+.popular-destinations {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.popular-destinations h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popular-destinations .container {
+    /*min-width: 800px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 40px;
+}
+
+.pop-product {
+    width: 30%;
+    max-height: 200px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .5);
+}
+
+.pop-product img {
+    width: 100%;
+    height: 110%;
+    transition: transform 0.3s;
+    opacity: .9;
+}
+
+
+.pop-product img:hover {
+    transform: scale(1.3);
+    opacity: .85;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .8);
+}
+
+.pop-product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 22px;
+}
+
+@media (max-width: 896px) {
+    .popular-destinations {
+        width: 100%;
+    }
+    .popular-destinations .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .pop-product {
+        width: 45%;
+    }
+    .pop-product-info {
+        font-size: 32px;
+    }
+}

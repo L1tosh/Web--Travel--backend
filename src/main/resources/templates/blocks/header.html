@@ -1,0 +1,37 @@
+<div th:fragment="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-wrap">
+                <a href="/" class="navbar-brand">YourTravel<br>
+                    <span>найкращі пропозиції</span></a>
+            </div>
+            <div class="navbar-login">
+                <a href="#" class="nav-btn-login" id="userIcon"><img src="/images/pages/header/profile.png"
+                                                                     alt="profile"></a>
+                <div class="login-menu" id="loginMenu">
+                    <form action="">
+                        <div class="floating-label">
+                            <input placeholder="Email" type="text" name="email" id="email" autocomplete="off">
+                        </div>
+                        <div class="floating-label">
+                            <input placeholder="Password" type="password" name="password" id="password"
+                                   autocomplete="off">
+                        </div>
+                        <button type="submit" onClick="return false;">Увійти</button>
+                        <a href="/registration" class="discrete">Реєстрація</a>
+                    </form>
+                </div>
+                <a href="#" class="nav-btn-login"><img src="/images/pages/header/basket.png" alt="basket"></a>
+            </div>
+        </nav>
+        <nav class="categories">
+            <ul class="navbar-menu">
+                <li><a href="#">Тури</a></li>
+                <li><a href="#">Міста</a></li>
+                <li><a href="#">Популярні тури</a></li>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="/faq">FAQs</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Nautilus Pompilius Font Family  -->
+    <link href="https://fonts.cdnfonts.com/css/nautilus-pompilius" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/barkentina-test" rel="stylesheet">
+
+    <!-- Bootstrap reboot -->
+    <link rel="stylesheet" href="/libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap-grid.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <!-- My style -->
+    <link rel="stylesheet" href="/css/general.css">
+
+    <link rel="stylesheet" href="/css/enter/registration.css">
+
+    <link rel="stylesheet" href="/css/templates/footer.css">
+    <link rel="stylesheet" href="/css/templates/header.css">
+
+    <link rel="stylesheet" href="/css/enter/login.css">
+
+    <title>Beauty</title>
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="overlay">
+    <div class="container">
+        <h2>Реєстрація нового користувача</h2>
+        <form method="POST" id="registration">
+            <input placeholder="Ім'я" type="text" name="name"/>
+            <input placeholder="Фамілія" type="text" name="name"/>
+            <input placeholder="Дата народження" min="1920-01-01" max="2023-12-31" type="date" name="date" />
+            <input placeholder="Телефон" type="tel" name="phone"/>
+            <input placeholder="Почта" type="text" name="email"/>
+            <input placeholder="Пароль" type="password" name="password"/>
+            <input placeholder="Повтор пароля" type="password" name="password"/>
+            <button>Зареєструватись</button>
+        </form>
+    </div>
+</main>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+<script src="/script/drop-down-login.js"></script>
+</body>
+</html>

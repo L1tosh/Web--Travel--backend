@@ -1,0 +1,77 @@
+.login-menu {
+    font-family: 'Noto Sans', sans-serif;
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 3;
+    border-radius: 4px;
+}
+
+.login-menu form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 10px;
+}
+
+.login-menu button {
+    min-width: 220px;
+    border-radius: 24px;
+    padding: 15px 40px;
+    margin-top: 18px;
+    background-color: var(--bar);
+    color: #fff;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 6px -3px rgba(0, 0, 0, 0.63);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.login-menu button:hover {
+    transform:  translateY(-3px);
+    box-shadow:  0 2px 6px -1px rgba(0, 0, 0, .65);
+}
+
+.login-menu button:active {
+    transform:  scale(.99);
+}
+
+.login-menu input {
+    font-size: 18px;
+    width: 300px;
+    padding: 18px 0 12px;
+    height: 56px;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    min-width: 280px;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    color: #000;
+}
+
+.login-menu input:focus {
+    border-bottom:  solid 1px var(--bar);
+    outline: 0;
+    box-shadow:  0 2px 6px -8px rgba(var(--text), .45);
+}
+
+.login-menu form .discrete {
+    color: rgba(var(--bar), 0.7);
+    font-size: 14px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0);
+    padding-bottom: 4px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+
+.login-menu form .discrete:hover {
+    color: rgba(var(--bar), 1);
+    border-bottom: solid 1px rgba(0, 0, 0, .8);
+}

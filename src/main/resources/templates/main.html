@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- CRM для туристичних агентств з обліком та керуванням турпакетами.-->
+<html lang="en">
+<head>
+    <title>Travel</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!--  Nautilus Pompilius Font Family  -->
+    <link href="https://fonts.cdnfonts.com/css/nautilus-pompilius" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/barkentina-test" rel="stylesheet">
+
+    <!-- Bootstrap reboot -->
+    <link rel="stylesheet" href="/libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap-grid.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" hype="text/css" href="/css/general.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/templates/header.css">
+    <link rel="stylesheet" type="text/css" href="/css/templates/footer.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/main/slider.css">
+    <link rel="stylesheet" type="text/css" href="/css/main/last-minute-tours.css">
+    <link rel="stylesheet" type="text/css" href="/css/main/popular-destinations.css">
+
+    <link rel="stylesheet" hype="text/css" href="/css/enter/login.css">
+
+    <script src="https://kit.fontawesome.com/018f2343ea.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main>
+    <div class="container">
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r1" checked>
+                <input type="radio" name="r" id="r2">
+                <input type="radio" name="r" id="r3">
+                <input type="radio" name="r" id="r4">
+
+                <div class="slide s1">
+                    <a href="#"><img src="/images/pages/main/slider/1.png" alt="Изображение" class="img"></a>
+                </div>
+                <div class="slide">
+                    <a href="#"><img src="/images/pages/main/slider/2.png" alt="Изображение" class="img"></a>
+                </div>
+                <div class="slide">
+                    <a href="#"><img src="/images/pages/main/slider/3.png" alt="Изображение" class="img"></a>
+                </div>
+                <div class="slide">
+                    <a href="#"><img src="/images/pages/main/slider/4.png" alt="Изображение" class="img"></a>
+                </div>
+            </div>
+            <div class="navigation">
+                <label for="r1" class="bar"></label>
+                <label for="r2" class="bar"></label>
+                <label for="r3" class="bar"></label>
+                <label for="r4" class="bar"></label>
+            </div>
+        </div>
+    </div>
+    <div class="last-minute-tours">
+        <h1>Гарячі тури</h1>
+        <div class="container">
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/1.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Ring Beach 5</div>
+                    <div class="country">Туреччина, Кемер</div>
+                    <div class="price">20 300 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/2.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Loxia Comfort Beach Alanya, 5</div>
+                    <div class="country">Туреччина, Анталія</div>
+                    <div class="price">32 089 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/3.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Tropitel Naama Bay, 5</div>
+                    <div class="country">Єгипет, Шарм-ель-Шейх</div>
+                    <div class="price">20 075 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/4.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Jaz Mirabel Beach, 5</div>
+                    <div class="country">Єгипет, Шарм-ель-Шейх</div>
+                    <div class="price">21 749 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/5.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Araliya Beach Hotel, 5</div>
+                    <div class="country">Шрі-Ланка, Унаватуна</div>
+                    <div class="price">51 000 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+            <div class="product">
+                <img class="product-img" src="/images/pages/main/last-minute-tours/6.png" alt="tee">
+                <div class="product-info">
+                    <div class="title">Gortyna Hotel, 3</div>
+                    <div class="country">Греція, Ретімно (о. Крит)</div>
+                    <div class="price">23 469 грн</div>
+                    <div class="quantity"> за 1 людину</div>
+                    <div class="more"><a href="#">Детальніше</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popular-destinations">
+        <h1>Популярні напрямки зараз</h1>
+        <div class="container">
+            <div class="pop-product">
+                <a href="#"><img src="/images/pages/main/popular-destinations/1.jpg" alt="popular"></a>
+                <div class="pop-product-info">
+                    <div class="pop-country">Туреччина<br> від 22 598 грн</div>
+                    <div class="pop-place">з Києва і Львова</div>
+                </div>
+            </div>
+            <div class="pop-product">
+                <img src="/images/pages/main/popular-destinations/2.jpeg" alt="popular">
+                <div class="pop-product-info">
+                    <div class="pop-country">Іспанія<br> від 25 058 грн</div>
+                    <div class="pop-place">з Києва і Варшави</div>
+                </div>
+            </div>
+            <div class="pop-product">
+                <img src="/images/pages/main/popular-destinations/3.jpeg" alt="popular">
+                <div class="pop-product-info">
+                    <div class="pop-country">Італія<br> від 19 562 грн</div>
+                    <div class="pop-place">з Києва і Одеси</div>
+                </div>
+            </div>
+            <div class="pop-product">
+                <img src="/images/pages/main/popular-destinations/4.jpeg" alt="popular">
+                <div class="pop-product-info">
+                    <div class="pop-country">Австрія<br> від 27 912 грн</div>
+                    <div class="pop-place">з Києва і Одеси</div>
+                </div>
+            </div>
+            <div class="pop-product">
+                <img src="/images/pages/main/popular-destinations/5.jpeg" alt="popular">
+                <div class="pop-product-info">
+                    <div class="pop-country">Норвегія<br> від 32 172 грн</div>
+                    <div class="pop-place">з Києва</div>
+                </div>
+            </div>
+            <div class="pop-product">
+                <img src="/images/pages/main/popular-destinations/6.jpeg" alt="popular">
+                <div class="pop-product-info">
+                    <div class="pop-country">Єгипет<br> від 18 159 грн</div>
+                    <div class="pop-place">з Києва і Одеси</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+<script src="/script/drop-down-login.js"></script>
+</body>
+</html>

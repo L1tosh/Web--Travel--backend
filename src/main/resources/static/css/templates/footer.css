@@ -1,0 +1,25 @@
+.footer {
+    width: 100%;
+    min-width: 800px;
+    background-color: var(--header-color);
+}
+.footer  > div.contacts {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.footer > p {
+    color: var(--links);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.footer  > div.contacts > a {
+    text-decoration: none;
+    color: var(--links);
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 50px;
+}
+.footer  > div.contacts > a:hover {
+    color: var(--hover-links);
+}
