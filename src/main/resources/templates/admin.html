@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,145 +19,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet">
 
-    <!--    <link rel="stylesheet" href="css/test.css">-->
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/admin/admin.css">
     <link rel="stylesheet" href="/css/admin/create-tour.css">
+    <link rel="stylesheet" href="/css/admin/edit-tour.css">
 
     <script src="https://kit.fontawesome.com/018f2343ea.js" crossorigin="anonymous"></script>
 
-    <title>Popup Example</title>
+    <title>Admin</title>
 </head>
 <body>
 
-<div class="top">
-    <div class="search-box">
-        <input type="text" placeholder="Search here...">
-    </div>
-    <div class="account">
-        <div>Danylo Litosh</div>
-        <img src="../images/pages/abou-us/1.jpg" alt="">
-    </div>
-
-</div>
+<header th:insert="blocks/admin :: top"></header>
 
 <section class="dashboard">
-
     <div class="dash-content">
-        <!--        Statistics-->
-        <div class="overview">
-            <div class="title">
-                <span class="text">Statistics</span>
-            </div>
-
-            <div class="boxes">
-                <a href="#" class="box box1">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="text">Total Customers</span>
-                    <span class="number">2</span>
-                </a>
-                <a href="#" class="box box2">
-                    <i class="uil uil-comments"></i>
-                    <span class="text">Tours</span>
-                    <span class="number">6</span>
-                </a>
-                <a href="#" class="box box3">
-                    <i class="uil uil-share"></i>
-                    <span class="text">Oders</span>
-                    <span class="number">0</span>
-                </a>
-            </div>
-        </div>
-
-        <!--        Hot tours-->
+        <div th:insert="blocks/admin :: statistics"></div>
+        <!--Hot tours-->
         <div class="activity">
+            <!--Title-->
             <div class="title">
                 <span class="text">Hot tours</span>
-                <a id="showPopupBtn" href="#"><img src="image/cross.png" alt="cross"></a>
+                <a id="showPopupBtn"><img src="/images/pages/cross.png" alt="cross"></a>
             </div>
-            <!--        Data list-->
-            <div class="activity-data">
+            <!--Data list-->
+            <div class="activity-data" >
                 <div class="data names">
                     <span class="data-title">Title</span>
-                    <span class="data-list"><a href="">Ring Beach 5</a></span>
-                    <span class="data-list"><a href="">Loxia Comfort Beach Alanya, 5</a></span>
-                    <span class="data-list"><a href="">Tropitel Naama Bay, 5</a></span>
-                    <span class="data-list"><a href="">Jaz Mirabel Beach, 5</a></span>
-                    <span class="data-list"><a href="">Araliya Beach Hotel, 5</a></span>
-                    <span class="data-list"><a href="">Gortyna Hotel, 3</a></span>
+                    <span class="data-list" th:each="el : ${travels}"><a href="" th:text="${el.name}"></a></span>
                 </div>
                 <div class="data price">
-                    <span class="data-title">Price UAH</span>
-                    <span class="data-list">20 300</span>
-                    <span class="data-list">32 089</span>
-                    <span class="data-list">20 075</span>
-                    <span class="data-list">21 749</span>
-                    <span class="data-list">51 000</span>
-                    <span class="data-list">23 469 </span>
+                    <span class="data-title" >Price UAH</span>
+                    <span class="data-list" th:each="el : ${travels}" th:text="${el.price}"></span>
                 </div>
                 <div class="data joined">
-                    <span class="data-title">Joined</span>
-                    <span class="data-list">2023-10-05</span>
-                    <span class="data-list">2023-10-05</span>
-                    <span class="data-list">2023-10-05</span>
-                    <span class="data-list">2023-10-05</span>
-                    <span class="data-list">2023-10-05</span>
-                    <span class="data-list">2023-10-05</span>
+                    <span class="data-title" >Joined</span>
+                    <span class="data-list" th:each="el : ${travels}" th:text="${el.country}"></span>
                 </div>
                 <div class="data status">
                     <span class="data-title">Status</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
-                    <span class="data-list"><i class="fa-solid fa-check"></i> Active</span>
+                    <span class="data-list" th:each="el : ${travels}" th:text="${el.city}"><i class="fa-solid fa-check"></i> Active</span>
                 </div>
                 <div class="data edit">
                     <span class="data-title">Edit</span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-pen-to-square"></i></span>
+                    <span class="data-list" th:each="el : ${travels}"><a  th:href="@{'admin/edit/' + ${el.id}}"><i class="fa-solid fa-pen-to-square"></i></a></span>
                 </div>
                 <div class="data edit">
                     <span class="data-title">Delete</span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
-                    <span class="data-list"><i class="fa-solid fa-trash"></i></span>
+                    <form th:each="el : ${travels}" th:action="@{'admin/delete/' + ${el.id}}" method="post">
+                        <span class="data-list" ><button type="submit"><img src="/images/pages/trash.png" alt="tresh"></button></span>
+                    </form>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
-<button>Показать блок</button>
 <div id="popupContainer">
     <div class="container">
-        <div id="popupContent">
-            <h1>Create new tour</h1>
-            <form method="post" id="registration">
-                <input placeholder="Назва" type="text" name="name"/>
-                <input placeholder="Ціна" type="number" name="price"/>
-                <input placeholder="Кількість людей" type="number" name="number_of_people"/>
-                <input placeholder="Кількість днів" type="number" name="day"/>
-                <input placeholder="Країна" type="text" name="country"/>
-                <input placeholder="Місто" type="text" name="city"/>
-                <input type="file" name="photo" />
-                <textarea placeholder="Опис" name="description"></textarea>
-                <button type="submit">Create</button>
-            </form>
-        </div>
-
+        <h1>Create new tour</h1>
+        <form action="admin/travel/create" method="post" class="container-form">
+            <input placeholder="Назва" type="text" name="name"/>
+            <input placeholder="Ціна" type="number" name="price"/>
+            <input placeholder="Кількість людей" type="number" name="number_of_people"/>
+            <input placeholder="Кількість днів" type="number" name="day"/>
+            <input placeholder="Країна" type="text" name="country"/>
+            <input placeholder="Місто" type="text" name="city"/>
+<!--            <input type="file" name="photo" />-->
+            <textarea placeholder="Опис" name="description"></textarea>
+            <button>Create</button>
+        </form>
     </div>
 </div>
+
 <script src="/script/popupContainer.js"></script>
-<input placeholder="Картинки" type="image" name="photo"/>
 </body>
 </html>

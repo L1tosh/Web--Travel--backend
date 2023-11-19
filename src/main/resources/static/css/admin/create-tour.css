@@ -15,19 +15,17 @@
 
 #popupContainer .container {
     max-width: 800px;
-}
-
-#popupContent {
     background: #fff;
     padding: 48px 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-#popupContent h1 {
+
+.container h1 {
     text-align: center;
     margin-bottom: 12px;
 }
-#registration {
+.container-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +34,7 @@
     position: relative;
 }
 
-#registration textarea {
+.container-form textarea {
     margin-top: 16px;
     max-height: 200px;
     height: 200px;
@@ -44,11 +42,11 @@
     padding: 6px;
     resize: none;
 }
-#registration textarea:focus {
+.container-form textarea:focus {
     border-color: var(--bar);
 }
 
-#registration input {
+.container-form input {
     font-size: 22px;
     width: 100%;
     padding: 20px 0 12px 8px;
@@ -62,13 +60,13 @@
     color: #000;
 }
 
-#registration input:focus {
+.container-form input:focus {
     border-bottom:  solid 1px var(--bar);
     outline: 0;
     box-shadow:  0 2px 6px -8px rgba(var(--text), .45);
 }
 
-#registration button {
+.container-form button {
     min-width: 280px;
     border-radius: 28px;
     padding: 16px 40px;
@@ -83,11 +81,11 @@
     transition: all 0.3s ease;
 }
 
-#registration button:hover {
+.container-form button:hover {
     transform:  translateY(-3px);
     box-shadow:  0 2px 6px -1px rgba(var(--text), .65);
 }
 
-#registration button:active {
+.container-form button:active {
     transform:  scale(.99);
 }

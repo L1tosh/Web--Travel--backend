@@ -198,6 +198,17 @@ body {
 span{
     color: var(--text);
 }
+.edit form button {
+    all: initial;
+    margin-top: 28px;
+    height: 25px;
+    width: 25px;
+}
+
+.edit form button img{
+    height: 100%;
+    width: 100%;
+}
 
 @media (max-width: 1000px) {
     .activity .activity-data {

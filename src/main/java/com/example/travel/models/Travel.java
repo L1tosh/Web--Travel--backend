@@ -16,11 +16,11 @@ public class Travel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String price;
+    private int price;
     private int number_of_people;
     private String city;
     private String country;
-    private String photo;
+//    private String photo;
     private int day;
     @Column(columnDefinition = "text")
     private String description;
