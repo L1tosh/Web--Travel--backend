@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Nautilus Pompilius Font Family  -->
+    <link href="https://fonts.cdnfonts.com/css/nautilus-pompilius" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/barkentina-test" rel="stylesheet">
+
+    <!-- Bootstrap reboot -->
+    <link rel="stylesheet" href="/libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap-grid.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="stylesheet" href="/css/admin/create-tour.css">
+    <link rel="stylesheet" href="/css/admin/edit-tour.css">
+
+    <script src="https://kit.fontawesome.com/018f2343ea.js" crossorigin="anonymous"></script>
+
+    <title>Admin</title>
+</head>
+<body>
+
+<header th:insert="blocks/admin :: top"></header>
+
+<section class="dashboard">
+    <div class="dash-content">
+        <div th:insert="blocks/admin :: statistics"></div>
+        <!--Hot tours-->
+        <div class="activity">
+            <!--Title-->
+            <div class="title">
+                <span class="text">Question</span>
+                <a id="showPopupBtn"><img src="/images/pages/cross.png" alt="cross"></a>
+            </div>
+            <!--Data list-->
+            <div class="activity-data">
+                <div class="data names" style="width: 80%;">
+                    <span class="data-title">Title</span>
+                    <span class="data-list" th:each="el : ${listQuestion}" th:text="${el.getQuestion()}"></span>
+                </div>
+                <div class="data edit">
+                    <span class="data-title">Edit</span>
+                    <span class="data-list" th:each="el : ${listQuestion}"><a th:href="@{'/admin/question/edit/' + ${el.id}}"><i
+                            class="fa-solid fa-pen-to-square"></i></a></span>
+                </div>
+                <div class="data edit">
+                    <span class="data-title">Delete</span>
+                    <form th:each="el : ${listQuestion}" th:action="@{'/admin/question/delete/' + ${el.id}}" method="post">
+                        <span class="data-list"><button type="submit"><img src="/images/pages/trash.png"
+                                                                           alt="tresh"></button></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="popupContainer">
+    <div class="container">
+        <h1>Create new question</h1>
+        <form action="/admin/question/create" method="post" class="container-form">
+            <input placeholder="Питання" type="text" name="question"/>
+            <select id="fruitSelect" name="category" >
+                <option disabled selected hidden>Категорія</option>
+                <option th:each="el : ${listQuestionCategory}" th:text="${el.name}"></option>
+            </select>
+            <textarea placeholder="Відповідь" name="answer"></textarea>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<script src="/script/popupContainer.js"></script>
+</body>
+</html>

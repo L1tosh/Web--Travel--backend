@@ -46,7 +46,7 @@
     border-color: var(--bar);
 }
 
-.container-form input {
+.container-form input, select {
     font-size: 22px;
     width: 100%;
     padding: 20px 0 12px 8px;
@@ -88,4 +88,14 @@
 
 .container-form button:active {
     transform:  scale(.99);
+}
+
+#fruitSelect{
+    padding-bottom: 2px;
+}
+#fruitSelect:focus {
+    border-bottom:  solid 1px var(--bar);
+    outline: 0;
+    box-shadow:  0 2px 6px -8px rgba(var(--text), .45);
+
 }

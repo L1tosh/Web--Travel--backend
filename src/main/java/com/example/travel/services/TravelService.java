@@ -13,14 +13,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TravelService {
     private final TravelRepository travelRepository;
+
     public List<Travel> listTravel(String name) {
         if (name != null) travelRepository.findByName(name);
         return (List<Travel>) travelRepository.findAll();
     }
+
     public void saveTravel(Travel travel) {
-        log.info("Saving new : {}", travel);
         travelRepository.save(travel);
     }
+
     public void editTravel(Long id, Travel upTravel) {
         Travel travel = getTravelById(id);
 
@@ -34,6 +36,7 @@ public class TravelService {
 
         travelRepository.save(travel);
     }
+
     public void deleteTravel(Long id) {
         travelRepository.deleteById(id);
     }

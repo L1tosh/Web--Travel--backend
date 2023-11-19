@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Nautilus Pompilius Font Family  -->
+    <link href="https://fonts.cdnfonts.com/css/nautilus-pompilius" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/barkentina-test" rel="stylesheet">
+
+    <!-- Bootstrap reboot -->
+    <link rel="stylesheet" href="/libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap-grid.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+
+    <script src="https://kit.fontawesome.com/018f2343ea.js" crossorigin="anonymous"></script>
+
+    <title>Admin</title>
+</head>
+<body>
+
+<header th:insert="blocks/admin :: top"></header>
+
+<section class="dashboard">
+    <div class="dash-content">
+        <div th:insert="blocks/admin :: statistics"></div>
+    </div>
+</section>
+</body>
+</html>

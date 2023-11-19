@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Nautilus Pompilius Font Family  -->
+    <link href="https://fonts.cdnfonts.com/css/nautilus-pompilius" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/barkentina-test" rel="stylesheet">
+
+    <!-- Bootstrap reboot -->
+    <link rel="stylesheet" href="/libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/libs/bootstrap-grid.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/admin/create-tour.css">
+    <link rel="stylesheet" href="/css/admin/edit-tour.css">
+
+    <script src="https://kit.fontawesome.com/018f2343ea.js" crossorigin="anonymous"></script>
+
+    <title>Admin</title>
+</head>
+<body>
+<div id="editContainer">
+    <div class="container">
+        <h1>Edit tour</h1>
+        <form th:action="@{'/admin/travel/edit/' + ${travel.id}}" method="post" class="container-form"
+              th:if="${travel != null}">
+            <input th:value="${travel.name}" type="text" name="name"/>
+            <input th:value="${travel.price}" type="number" name="price"/>
+            <input th:value="${travel.number_of_people}" type="number" name="number_of_people"/>
+            <input th:value="${travel.day}" type="number" name="day"/>
+            <input th:value="${travel.country}" type="text" name="country"/>
+            <input th:value="${travel.city}" type="text" name="city"/>
+            <!--            <input th:placeholder="${travel.name}" name="photo"/>-->
+            <textarea th:text="${travel.description}" name="description"></textarea>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    document.getElementById('editContainer').addEventListener('click', function (event) {
+        if (event.target === this) {
+            window.location.href = '/admin';
+        }
+    });
+</script>
+</body>
+</html>

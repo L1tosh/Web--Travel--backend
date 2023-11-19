@@ -30,18 +30,15 @@
 <body>
 <div id="editContainer">
     <div class="container">
-        <h1>Edit tour</h1>
-        <form th:action="@{'/admin/edit/' + ${travel.id}}" method="post" class="container-form"
-              th:if="${travel != null}">
-            <input th:value="${travel.name}" type="text" name="name"/>
-            <input th:value="${travel.price}" type="number" name="price"/>
-            <input th:value="${travel.number_of_people}" type="number" name="number_of_people"/>
-            <input th:value="${travel.day}" type="number" name="day"/>
-            <input th:value="${travel.country}" type="text" name="country"/>
-            <input th:value="${travel.city}" type="text" name="city"/>
-            <!--            <input th:placeholder="${travel.name}" name="photo"/>-->
-            <textarea th:text="${travel.description}" name="description"></textarea>
-            <button type="submit">Save</button>
+        <h1>Edit question</h1>
+        <form th:action="@{'/admin/question/edit/' + ${question.id}}" method="post" class="container-form">
+            <input th:value="${question.getQuestion()}" type="text" name="question"/>
+            <select id="fruitSelect" name="category" >
+                <option th:text="${question.getCategory().name}" selected hidden></option>
+                <option th:each="el : ${listQuestionCategory}" th:if="${el.name} != ${question.getCategory()}" th:text="${el.name}"></option>
+            </select>
+            <textarea th:text="${question.getAnswer()}" name="answer"></textarea>
+            <button type="submit">Create</button>
         </form>
     </div>
 </div>
